@@ -1,6 +1,13 @@
 {
-  "totalPrompts": 1,
+  "totalPrompts": 32,
   "commandUsage": {
-    "chat2": 1
+    "chat2": 2,
+    "summarize": 4,
+    "stats": 1,
+    "websearch": 6,
+    "chat": 1,
+    "think2": 15,
+    "image": 2,
+    "analyze": 1
   }
 }

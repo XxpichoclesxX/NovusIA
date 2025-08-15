@@ -2,7 +2,8 @@
   "dependencies": {
     "axios": "^1.10.0",
     "discord.js": "^14.21.0",
-    "dotenv": "^17.2.0"
+    "dotenv": "^17.2.0",
+    "pdf-parse": "^1.1.1"
   },
   "name": "novusia",
   "version": "1.0.0",

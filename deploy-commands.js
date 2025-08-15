@@ -1,4 +1,3 @@
-// deploy-commands.js
 const { REST, Routes, SlashCommandBuilder } = require('discord.js');
 require('dotenv').config();
 
@@ -24,8 +23,8 @@ const commands = [
     // Command 1: /chat
     new SlashCommandBuilder()
         .setName('chat')
-        .setDescription('Start a conversation with Novus (standard model but the fastest).')
-        .setDMPermission(false)
+        .setDescription('Start a conversation with Novus (standard model but the fastest). | Works on DM"s!')
+        .setDMPermission(true)
         .addStringOption(option =>
             option.setName('prompt')
                 .setDescription('Your question or message.')
@@ -34,8 +33,8 @@ const commands = [
     // Command 2: /chat2
     new SlashCommandBuilder()
         .setName('chat2')
-        .setDescription('Chat with Novus (alternative, more direct model and faster). | Works on DM"s!')
-        .setDMPermission(true)
+        .setDescription('Chat with Novus (alternative, more direct model but less fast).')
+        .setDMPermission(false)
         .addStringOption(option =>
             option.setName('prompt')
                 .setDescription('Your question or message.')
@@ -106,9 +105,33 @@ const commands = [
     new SlashCommandBuilder()
         .setName('stats')
         .setDescription('Displays usage statistics for the bot.')
-        .setDMPermission(false)
         .setDefaultMemberPermissions(0) // Admin-only
         .setDMPermission(false), // Server-only
+    // Command 10: /websearch
+    new SlashCommandBuilder()
+        .setName('websearch')
+        .setDescription('Asks Novus a question with access to live web search results.')
+        .setDMPermission(false) // This to prevent users from searching malicious data without admin concerns.
+        .addStringOption(option =>
+            option.setName('query')
+                .setDescription('The question you want to search the web for.')
+                .setRequired(true)
+        ),
+    // Command 11: /analyze
+    new SlashCommandBuilder()
+        .setName('analyze')
+        .setDescription('Analyzes a .txt or .pdf file and answers your question about it.')
+        .setDMPermission(false) // Prevent users from analyzing weird or malicious documents.
+        .addAttachmentOption(option =>
+            option.setName('document')
+                .setDescription('The .txt or .pdf file you want to analyze.')
+                .setRequired(true)
+        )
+        .addStringOption(option =>
+            option.setName('prompt')
+                .setDescription('Your question about the document.')
+                .setRequired(true)
+        ),
 ].map(command => command.toJSON());
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
