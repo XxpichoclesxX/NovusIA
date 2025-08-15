@@ -95,7 +95,7 @@ Once the bot joins, it will send a welcome message. An administrator must perfor
 | **/chat** | Starts a standard conversation with Novus. | llama3.2 | [Llama3.2](https://ollama.com/library/llama3.2) | Super small even being the biggest; `llama3.2:3b` or `llama3.2:latest` |
 | **/chat2** | Starts a conversation with an alternative model. | llama3.1 | [Llama3.1](https://ollama.com/library/llama3.1) | Depends on your machine; `llama3.1:8b` or `llama3.1:latest` |
 | **/think** | Asks a complex question using a reasoning model. | deepseek-r1 | [Deepseek-r1](https://ollama.com/library/deepseek-r1) | Big and needs a good end machine; `deepseek-r1:8b` or `deepseek-r1:latest` |
-| **/think2** | Asks a complex question using a reasoning model. | qwen3:8b | [Deepseek-r1](https://ollama.com/library/qwen3) | Big and needs a good end machine; `qwen3:8b` or `qwen3:latest` |
+| **/think2** | Asks a complex question using a reasoning model. | qwen3:8b | [Qwen-3](https://ollama.com/library/qwen3) | Big and needs a good end machine; `qwen3:8b` or `qwen3:latest` |
 | **/image** | Asks a question about an attached image. | gemma3 | [Gemma3](https://ollama.com/library/gemma3) | Needs minimum `gemma3:4b` for vision or higher. |
 | **/remember** |A way the bot can remember your data. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
 | **/forget** | The way the bot to forget all your data. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
