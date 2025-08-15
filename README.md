@@ -2,8 +2,9 @@
 Novus is a powerful, self-hosted Discord bot that integrates directly with Ollama, allowing you to bring the power of various open-source large language models to your Discord server. It's designed to be professional, configurable, and versatile, offering different models for different tasks, from standard chatting and complex reasoning to image analysis.
 
 ## ✨ Features
-- **Multi-Model Support**: Use different commands (/chat, /chat2, /think) to interact with specific language models tailored for different tasks.
+- **Multi-Model Support**: Use different commands (/chat, /chat2, /think, /think2, /summarize, /websearch) to interact with specific language models tailored for different tasks.
 - **Image Analysis**: Ask questions about images directly in Discord using the /image command and a vision-capable model.
+- **Document Analysis**: Ask questions about documents directly in Discord using the /analyze command and any model with text support.
 - **Slash Commands**: Modern, intuitive, and permission-friendly interaction using Discord's built-in slash commands.
 - **Server-Specific Configuration**: Administrators can easily configure the bot to operate only in a specific channel and require a specific role for access using the /setup command.
 - **Conversation History**: The bot remembers the context of recent messages in a channel for more natural, flowing conversations.
@@ -34,6 +35,7 @@ Note: *If it doesn't work, do it manually:*
 npm install discord.js
 npm install dotenv
 npm install axios
+npm install pdf-parse
 ```
 
 ### 3. Set Up the Discord Bot
@@ -47,8 +49,9 @@ npm install axios
 First rename the file named **example.env** to just **.env** without a name. *This will make the file hidden for the commands only.*
 ```
 # .env file
-DISCORD_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
+DISCORD_TOKEN=DISCORD_BOT_TOKEN_HERE
 CLIENT_ID=YOUR_APPLICATION_CLIENT_ID_HERE
+SERPER_API_KEY=SERPER_API_KEY_HERE
 ```
 
 ### 5. Download Ollama Models
@@ -57,6 +60,7 @@ Novus is configured to use several different models. Open your terminal and pull
 ollama pull llama3.2:latest
 ollama pull llama3.1:latest (Or the model you want)
 ollama pull deepseek-r1:8b (Or the model you want)
+ollama pull qwen3:8b (Or the model you want)
 ollama pull gemma3:4b (Or the model you want)
 ```
 Note: *You can change these model names in index.js if you prefer to use different ones.*
@@ -100,6 +104,8 @@ Once the bot joins, it will send a welcome message. An administrator must perfor
 | **/remember** |A way the bot can remember your data. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
 | **/forget** | The way the bot to forget all your data. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
 | **/summarize** | A way to summarize the guild chat that you are currently on. | N/A |[N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
+| **/websearch** | A way to ask for the bot to search for data online. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
+| **/analyze** | A way to ask the bot for questions of a provided document. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
 | **/stats** | A way to ask for the stats for the use of the bot. | N/A | [N/A](https://github.com/XxpichoclesxX/NovusIA) | N/A. |
 
 </div>
